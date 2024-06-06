@@ -1,3 +1,10 @@
 #!/bin/bash
 echo "hello world"
 mkdir thiswasgeneratedbyremotescript
+cat << EOF > thiswasgeneratedbyremotescript/file1.txt
+this is some file 
+a multiline file 
+indeed. Testing 123
+lorem yada yada 
+EOF
+echo "script finished!"
