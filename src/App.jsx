@@ -97,15 +97,15 @@ EOF`
 
 
 
-  const tsar_bomba = purified('bash',`npm pkg set 'scripts.predeploy'='rm -rf dist && rm -rf .parcel-cache/ &&  parcel build ./*.html --public-url ./' && npm pkg set 'scripts.deploy'='gh-pages -d dist' && npm pkg set 'scripts.start'='parcel ./*.html' && npm i --save-dev gh-pages && npm i react react-dom && mkdir src public`)
+  // const tsar_bomba = purified('bash',`npm pkg set 'scripts.predeploy'='rm -rf dist && rm -rf .parcel-cache/ &&  parcel build ./*.html --public-url ./' && npm pkg set 'scripts.deploy'='gh-pages -d dist' && npm pkg set 'scripts.start'='parcel ./*.html' && npm i --save-dev gh-pages && npm i react react-dom && mkdir src public`)
 
 
   // const fat_man = purified('bash', `echo ${index_html} > index.html && echo ${app_jsx} > src/App.jsx && echo ${app_css} > src/App.css && echo ${main_jsx} > src/main.jsx`)
 
-  const _index   = purified('bash', `${index_html}`)
-  const _appjsx  = purified('bash', `${app_jsx}`)
-  const _appcss  = purified('bash', `${app_css}`)
-  const _mainjsx = purified('bash', `${main_jsx}`)
+
+
+  const tsar_bomba = purified('bash',`curl -o - https://raw.githubusercontent.com/Perlesvaux/react-app-with-parcel/main/react_boilerplate | bash -s -- ${state.parseUrl}`)
+
 
   const little_boy = purified('bash',`npm pkg set 'scripts.predeploy'='rm -rf dist && rm -rf .parcel-cache/ &&  parcel build ./*.html --public-url ./' && npm pkg set 'scripts.deploy'='gh-pages -d dist' && npm pkg set 'scripts.start'='parcel ./*.html' && npm i --save-dev gh-pages`)
 
@@ -151,6 +151,11 @@ function toClipBoard(e) {
         //   <input type="text" name="proEnv" onChange={getInput} value={state.proEnv}/> 
         // </label>
 
+      // <pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:_index}}></code></pre>
+      // <pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:_mainjsx}}></code></pre>
+      // <pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:_appjsx}}></code></pre>
+      // <pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:_appcss}}></code></pre>
+
 
   return (
     <>
@@ -173,17 +178,13 @@ function toClipBoard(e) {
 
       <h1 className='text-center'>Push it to the limit!</h1>
       <p className='text-center'> <i className="bi bi-radioactive fs-3"></i> These below assume a <strong>global installation</strong> and <strong>remote repository already set</strong>!</p>
-      <h6 className='text-muted'> <i className="bi bi-file-code-fill fs-2"></i> One-liner with the essentials. Only thing left is to run the <strong>deploy</strong> script!</h6>
+      <h6 className='text-muted'> <i className="bi bi-file-code-fill fs-2"></i> One-liner with the essentials. Only thing left is to run the <strong>deploy</strong> script! (requires having a package.json already)</h6>
       <pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:little_boy}}></code></pre>
 
 
 
-      <h6 className='text-muted'> <i className="bi bi-file-code fs-2"></i> Use this to create a <strong>React.js app</strong></h6>
+      <h6 className='text-muted'> <i className="bi bi-file-code fs-2"></i> Use this to create a <strong>React.js app</strong> from scratch!</h6>
       <pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:tsar_bomba}}></code></pre>
-      <pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:_index}}></code></pre>
-      <pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:_mainjsx}}></code></pre>
-      <pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:_appjsx}}></code></pre>
-      <pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:_appcss}}></code></pre>
     </>
   )
 }
