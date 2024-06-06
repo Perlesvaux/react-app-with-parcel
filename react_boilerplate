@@ -1,10 +1,25 @@
 #!/bin/bash
 echo "hello world"
 mkdir thiswasgeneratedbyremotescript
-cat << EOF > thiswasgeneratedbyremotescript/file1.txt
-this is some file 
-a multiline file 
-indeed. Testing 123
-lorem yada yada 
+cat << EOF > package.json
+{
+  "name": "CHANGE WITH parseURL",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "parcel ./*.html",
+    "predeploy": "rm -rf dist && rm -rf .parcel-cache/ &&  parcel build ./*.html --public-url ./",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1",
+  }
+}
 EOF
-echo "script finished!"
+npm i
+
+
+
