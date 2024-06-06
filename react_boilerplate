@@ -4,7 +4,7 @@ mkdir thiswasgeneratedbyremotescript
 echo "cattt"
 cat << EOF > package.json
 {
-  "name": "CHANGE WITH PARSEURL",
+  "name": "$1",
   "private": true,
   "version": "0.0.0",
   "type": "module",
