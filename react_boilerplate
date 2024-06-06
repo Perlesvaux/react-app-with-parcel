@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "hello world"
 mkdir thiswasgeneratedbyremotescript
+echo "cattt"
 cat << EOF > package.json
 {
   "name": "CHANGE WITH PARSEURL",
