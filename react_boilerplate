@@ -15,11 +15,12 @@ cat << EOF > package.json
   "dependencies": {
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1",
+    "gh-pages": "^6.1.1"
   }
 }
 EOF
 npm i
+echo "all set :d"
 
 
 
