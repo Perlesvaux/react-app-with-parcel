@@ -22,7 +22,7 @@ function App() {
     { legend:'<i class="bi bi-terminal-fill fs-3"></i>  Create project', cmd: purified('bash',`mkdir ${state.parseUrl} && cd ${state.parseUrl} && npm init`) },
     { legend: '<i class="bi bi-terminal-fill fs-3"></i>  ... Add these scripts', cmd : purified('bash', `npm pkg set 'scripts.predeploy'='rm -rf dist && rm -rf .parcel-cache/ &&  parcel build ./*.html --public-url ./' && npm pkg set 'scripts.deploy'='gh-pages -d dist' && npm pkg set 'scripts.start'='parcel ./*.html'`)},
     { legend: '<i class="bi bi-terminal-fill fs-3"></i>  ... Install this dependency' ,cmd:purified('bash', `npm i --save-dev gh-pages`) },
-{legend: '<i class="bi bi-filetype-jsx fs-3"></i>  If you didn\'t install Parcel globally, add it to your project like this', cmd:purified('bash',`npm i --save-dev parcel` )},
+{legend: '<i class="bi bi-terminal fs-3"></i>  If you didn\'t install Parcel globally, add it to your project like this', cmd:purified('bash',`npm i --save-dev parcel` )},
     { legend: '<i class="bi bi-terminal-fill fs-3"></i> ... It\'s time to deploy! (setup your <a href=\'https://github.com/new\'><strong>remote repository</strong></a> first!)', cmd: purified('bash', `npm run deploy`) }
   ]
 
