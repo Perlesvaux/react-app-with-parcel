@@ -3,7 +3,7 @@ echo "hello world"
 mkdir thiswasgeneratedbyremotescript
 cat << EOF > package.json
 {
-  "name": "CHANGE WITH parseURL",
+  "name": "CHANGE WITH PARSEURL",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,16 +11,10 @@ cat << EOF > package.json
     "start": "parcel ./*.html",
     "predeploy": "rm -rf dist && rm -rf .parcel-cache/ &&  parcel build ./*.html --public-url ./",
     "deploy": "gh-pages -d dist"
-  },
-  "dependencies": {
-  },
-  "devDependencies": {
-    "gh-pages": "^6.1.1"
   }
 }
 EOF
-npm i
-echo "all set :d"
+
 
 
 
